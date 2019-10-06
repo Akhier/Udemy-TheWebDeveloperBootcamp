@@ -1,0 +1,19 @@
+h1 {
+    color: rgba(0, 200, 100, .6);
+
+/*    border-color: purple;
+    border-width: 5px;
+    border-style: solid;*/
+    border: 2px solid rgb(255, 100, 80);
+}
+
+h4 {
+    background: rgb(255, 100, 80);
+}
+
+body {
+/*    background: url(https://cotter.co/wp-content/uploads/2016/10/oak_veenered_plywood_texture.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    background: pink;
+}
