@@ -1,1 +1,3 @@
-var catMe = require("cat-me");
+var cat = require("cat-me");
+
+console.log(cat());
