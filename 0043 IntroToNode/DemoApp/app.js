@@ -1,0 +1,1 @@
+var catMe = require("cat-me");
