@@ -3,3 +3,6 @@ function echo(str, num) {
     console.log(str);
   }
 }
+
+echo("Echo", 10)
+echo("Tater Tots", 3)
