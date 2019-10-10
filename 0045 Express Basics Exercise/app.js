@@ -6,13 +6,14 @@ app.get("/", function(req, res){
 });
 
 app.get("/speak/:animal", function(req, res){
-  var animal = req.params.animal.toLocaleLowerCase;
+  var animal = req.params.animal.toLowerCase();
   var sounds = {
     pig: "Oink",
     cow: "Moo",
     dog: "Woof Woof!"
     cat: "I hate you human",
-    goldfish: "..."
+    goldfish: "...",
+    cashier: "Hello, do you have a bonus card?"
   };
   var sound = sounds[animal];
   res.send("The " + animal + " says '" + sound + "'");
