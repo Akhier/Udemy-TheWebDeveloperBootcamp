@@ -19,12 +19,12 @@ app.get("/speak/:animal", function(req, res){
   res.send("The " + animal + " says '" + sound + "'");
 });
 
-app.get("/repeat/:word/:num", function(req, res){
-  var word = req.params.word;
-  var num =  Number(req.params.num);
-  var line = word;
-  for (let i = 0; i < num - 1; i++) {
-    line += " " + word;
+app.get("/repeat/:message/:times", function(req, res){
+  var message = req.params.message;
+  var times =  Number(req.params.times);
+  var line = message;
+  for (let i = 0; i < times - 1; i++) {
+    line += " " + message;
   }
   res.send(line);
 });
