@@ -14,6 +14,10 @@ app.get("/dog", function(req, res){
   res.send("MEOW!");
 });
 
+app.get("/r/:subName", function(req, res){
+  res.send("welcome to a sub");
+});
+
 app.get("*", function(req, res){
   res.send("You are a Star!");
 });
