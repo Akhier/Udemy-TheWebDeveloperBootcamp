@@ -30,6 +30,10 @@ app.get("/repeat/:word/:num", function(req, res){
   app.send(line);
 });
 
+app.get("*", function(req, res){
+  app.send("Sorry, page not found...What are you doing with your life?");
+})
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("Server Has Started!");
