@@ -15,8 +15,8 @@ app.get("/dog", function(req, res){
 });
 
 app.get("/r/:subName", function(req, res){
-  console.log(req.params);
-  res.send("welcome to a sub");
+  var sub = req.params.subName;
+  res.send("welcome to the " + sub.toUpperCase() + " sub!");
 });
 
 app.get("/r/:subName/comments/:id/:title/", function(req, res){
