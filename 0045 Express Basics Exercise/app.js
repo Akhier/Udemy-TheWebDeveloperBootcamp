@@ -15,7 +15,7 @@ app.get("/speak/:animal", function(req, res){
     goldfish: "..."
   };
   var sound = sounds[animal];
-  res.send("The " + animal + " says " + sound);
+  res.send("The " + animal + " says '" + sound + "'");
 });
 
 app.get("/repeat/:word/:num", function(req, res){
