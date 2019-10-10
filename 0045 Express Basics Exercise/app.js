@@ -20,6 +20,16 @@ app.get("/speak/:animal", function(req, res){
   app.send(line);
 });
 
+app.get("/repeat/:word/:num", function(req, res){
+  var word = req.params.word;
+  var num =  Number(req.params.num);
+  var line = word;
+  for (let i = 0; i < num - 1; i++) {
+    line += " " + word;
+  }
+  app.send(line);
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("Server Has Started!");
