@@ -6,7 +6,7 @@ app.get("/", function(req, res){
 });
 
 app.get("/speak/:animal", function(req, res){
-  var animal = req.params.animal;
+  var animal = req.params.animal.toLocaleLowerCase;
   var sounds = {
     pig: "Oink",
     cow: "Moo",
