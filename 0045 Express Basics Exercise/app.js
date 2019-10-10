@@ -22,11 +22,11 @@ app.get("/speak/:animal", function(req, res){
 app.get("/repeat/:message/:times", function(req, res){
   var message = req.params.message;
   var times =  Number(req.params.times);
-  var line = message;
+  var result = message;
   for (let i = 0; i < times - 1; i++) {
-    line += " " + message;
+    result += " " + message;
   }
-  res.send(line);
+  res.send(result);
 });
 
 app.get("*", function(req, res){
