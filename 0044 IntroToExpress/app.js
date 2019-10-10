@@ -18,6 +18,10 @@ app.get("/r/:subName", function(req, res){
   res.send("welcome to a sub");
 });
 
+app.get("/r/:subName/comments/:id/:title/", function(req, res){
+  res.send("welcome to the comments page");
+});
+
 app.get("*", function(req, res){
   res.send("You are a Star!");
 });
