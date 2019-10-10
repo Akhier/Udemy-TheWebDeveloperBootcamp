@@ -31,7 +31,7 @@ app.get("/repeat/:message/:times", function(req, res){
 
 app.get("*", function(req, res){
   res.send("Sorry, page not found...What are you doing with your life?");
-})
+});
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
