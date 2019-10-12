@@ -14,7 +14,7 @@ app.get("/", function(req, res){
 app.post("/addfriend", function(req, res){
   var newFriend = req.body.newfriend;
   friends.push(newFriend);
-  res.send("You Have Reached the Post Route");
+  res.redirect("/friends");
 });
 
 app.get("/friends", function(req, res){
