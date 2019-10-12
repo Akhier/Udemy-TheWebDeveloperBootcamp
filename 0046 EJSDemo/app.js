@@ -5,6 +5,11 @@ app.get("/", function(req, res){
   res.render("home.ejs");
 });
 
+app.get("/fallinlovewith/:thing", function(req, res){
+  var thing = req.params.thing;
+  res.send("You fell in love with " + thing);
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("Server Has Started!");
