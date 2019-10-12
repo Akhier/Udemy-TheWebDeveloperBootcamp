@@ -8,6 +8,7 @@ app.get("/", function(req, res){
 });
 
 app.post("/addfriend", function(req, res){
+  console.log(req.body);
   res.send("You Have Reached the Post Route");
 });
 
