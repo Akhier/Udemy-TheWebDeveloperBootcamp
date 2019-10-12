@@ -8,7 +8,8 @@ app.get("/", function(req, res){
 });
 
 app.get("/friends", function(req, res){
-  res.render("friends");
+  var friends = ["Tony", "Miranda", "Justin", "Pierre", "Lily"];
+  res.render("friends", {friends: friends});
 });
 
 var port = process.env.PORT || 3000;
