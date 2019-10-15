@@ -17,6 +17,10 @@ app.get("/campgrounds", function(req, res){
   res.render("campgrounds", {campgrounds:campgrounds});
 });
 
+app.post("/campgrounds", function(req, res){
+  
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("The YelpCamp Server Has Started!");
