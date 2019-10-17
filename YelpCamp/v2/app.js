@@ -67,7 +67,13 @@ app.get("/campgrounds/new", function(req, res){
 });
 
 app.get("/campgrounds/:id", function(req, res){
-  res.render("show");
+  Campground.findById(req.params.id, function(err, foundCampground){
+    if(err){
+      console.log(err);
+    } else {
+      res.render("show", {campground: foundCampground});
+    }
+  }),
 });
 
 var port = process.env.PORT || 3000;
