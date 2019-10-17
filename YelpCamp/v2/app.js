@@ -64,6 +64,10 @@ app.get("/campgrounds/new", function(req, res){
   res.render("new.ejs");
 });
 
+app.get("/campgrounds/:id", function(req, res){
+  res.send("This will be the show page");
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("The YelpCamp Server Has Started!");
