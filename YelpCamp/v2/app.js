@@ -36,11 +36,11 @@ app.get("/", function(req, res){
 });
 
 app.get("/campgrounds", function(req, res){
-  Campground.find({}, function(err, campgrounds){
+  Campground.find({}, function(err, allCampgrounds){
     if(err){
       console.log(err);
     } else {
-      res.render("campgrounds", {campgrounds:campgrounds});
+      res.render("campgrounds", {campgrounds:allCampgrounds});
     }
   })
 });
