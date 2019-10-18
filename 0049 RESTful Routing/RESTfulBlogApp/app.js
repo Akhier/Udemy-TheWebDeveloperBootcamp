@@ -17,7 +17,9 @@ var blogSchema = new mongoose.Schema({
 });
 var Blog = mongoose.model("Blog", blogSchema);
 
-
+app.get("/blogs", function(req, res){
+  res.render("index");
+});
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
