@@ -17,6 +17,12 @@ var blogSchema = new mongoose.Schema({
 });
 var Blog = mongoose.model("Blog", blogSchema);
 
+Blog.create({
+  title: "test blog",
+  image: "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12234558/Chinook-On-White-03.jpg",
+  body: "Hello this is a blog post."
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("Server Has Started!");
