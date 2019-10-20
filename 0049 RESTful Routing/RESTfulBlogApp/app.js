@@ -1,8 +1,9 @@
-var express     = require("express"),
-app             = express(),
-bodyParser      = require("body-parser"),
-mongoose        = require("mongoose"),
-methodOverride  = require("method-override");
+var express       = require("express"),
+app               = express(),
+bodyParser        = require("body-parser"),
+mongoose          = require("mongoose"),
+methodOverride    = require("method-override"),
+expressSanitizer  = require("express-sanitizer");
 
 mongoose.set('useUnifiedTopology', true);
 mongoose.connect("mongodb://localhost/restful_blog_app", { useNewUrlParser: true });
@@ -10,6 +11,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
+app.use(expressSanitizer);
 
 var blogSchema = new mongoose.Schema({
   title: String,
