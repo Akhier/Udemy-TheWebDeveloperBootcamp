@@ -31,6 +31,10 @@ app.get("/blogs", function(req, res){
   });
 });
 
+app.get("/blogs/new", function(req,res){
+  res.render("new");
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("Server Has Started!");
