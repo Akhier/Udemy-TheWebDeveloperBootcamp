@@ -55,6 +55,10 @@ app.get("/blogs/:id", function(req, res){
   });
 });
 
+app.get("/blogs/:id/edit", function(req, res){
+  res.render("edit");
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("Server Has Started!");
