@@ -41,6 +41,7 @@ app.get("/blogs/new", function(req, res){
 
 app.post("/blogs", function(req, res){
   Blog.create(req.body.blog, function(err, newBlog){
+    req.body.blog.body = req.sanitize(req.body.blog.body);
     if(err){
       res.render("new")
     } else {
@@ -70,6 +71,7 @@ app.get("/blogs/:id/edit", function(req, res){
 });
 
 app.put("/blogs/:id", function(req, res){
+  req.body.blog.body = req.sanitize(req.body.blog.body);
   Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
     if(err){
       res.redirect("/blogs");
