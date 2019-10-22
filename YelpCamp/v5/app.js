@@ -6,11 +6,12 @@ var express     = require("express"),
     Comment     = require("./models/comment"),
     seedDB      = require("./seeds");
 
-seedDB();   
 mongoose.set('useUnifiedTopology', true);
 mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
+seedDB();
 
 app.get("/", function(req, res){
   res.render("landing");
