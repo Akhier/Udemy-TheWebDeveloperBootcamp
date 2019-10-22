@@ -1,7 +1,8 @@
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
-    mongoose    = require("mongoose");
+    mongoose    = require("mongoose"),
+    Campground  = require("./models/campgrounds");
 
 mongoose.set('useUnifiedTopology', true);
 mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
