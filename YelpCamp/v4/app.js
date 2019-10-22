@@ -50,7 +50,11 @@ app.get("/campgrounds/:id", function(req, res){
     } else {
       res.render("show", {campground: foundCampground});
     }
-  })
+  });
+});
+
+app.get("/campgrounds/:id/comments/new", function(req, res){
+  
 });
 
 var port = process.env.PORT || 3000;
