@@ -8,14 +8,6 @@ mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
-// Schema Setup - will be moved to seperate file
-var campgroundSchema = new mongoose.Schema({
-  name: String,
-  image: String,
-  description: String
-});
-var Campground = mongoose.model("Campground", campgroundSchema);
-
 // Campground.create({
 //   name: "Granite Hill",
 //   image: "https://farm1.staticflickr.com/60/215827008_6489cd30c3.jpg",
