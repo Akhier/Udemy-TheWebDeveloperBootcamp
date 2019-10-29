@@ -56,6 +56,10 @@ app.post("/login", passport.authenticate("local", {
   failureRedirect: "/login"
 }), function(req, res){});
 
+app.get("/logout", function(req, res){
+  res.send("test");
+});
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("server started");
 });
