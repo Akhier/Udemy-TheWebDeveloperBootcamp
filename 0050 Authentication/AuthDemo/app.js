@@ -10,6 +10,11 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect("mongodb://localhost/auth_demo_app", { useNewUrlParser: true });
 var app = express();
 app.set("view engine", "ejs");
+app.use(require("express-session")({
+  secret: "learning auth online",
+  resave: false,
+  saveUninitialized: false
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
