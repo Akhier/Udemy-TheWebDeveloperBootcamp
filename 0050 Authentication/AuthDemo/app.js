@@ -61,6 +61,10 @@ app.get("/logout", function(req, res){
   res.redirect("/");
 });
 
+function isLoggedIn(req, res, next){
+  
+}
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("server started");
 });
