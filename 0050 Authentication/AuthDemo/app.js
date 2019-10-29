@@ -29,6 +29,10 @@ app.get("/secret", function(req, res){
   res.render("secret");
 });
 
+app.get("/register", function(req, res){
+  res.render("register");
+});
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("server started");
 });
