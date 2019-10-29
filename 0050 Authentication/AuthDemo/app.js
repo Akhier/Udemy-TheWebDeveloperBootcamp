@@ -54,9 +54,7 @@ app.get("/login", function(req, res){
 app.post("/login", passport.authenticate("local", {
   successRedirect: "/secret",
   failureRedirect: "/login"
-}), function(req, res){
-
-});
+}), function(req, res){});
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("server started");
