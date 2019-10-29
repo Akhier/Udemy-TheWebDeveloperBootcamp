@@ -10,6 +10,7 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect("mongodb://localhost/auth_demo_app", { useNewUrlParser: true });
 var app = express();
 app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(require("express-session")({
   secret: "learning auth online",
   resave: false,
@@ -34,7 +35,9 @@ app.get("/register", function(req, res){
 });
 
 app.post("/register", function(req, res){
-  res.send("register post route");
+  User.register(new User({username: req.body.username}), req.body.password, function(err, user){
+
+  });
 });
 
 app.listen(process.env.PORT || 3000, function(){
