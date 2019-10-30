@@ -115,6 +115,10 @@ app.post("/register", function(req, res){
   });
 });
 
+app.get("/login", function(req, res){
+  res.render("login");
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("The YelpCamp Server Has Started!");
