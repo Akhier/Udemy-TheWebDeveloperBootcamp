@@ -122,7 +122,7 @@ app.get("/login", function(req, res){
 app.post("/login", passport.authenticate("local", {
   successRedirect: "/campgrounds",
   failureRedirect: "/login"
-}) function(req, res){});
+}), function(req, res){});
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
