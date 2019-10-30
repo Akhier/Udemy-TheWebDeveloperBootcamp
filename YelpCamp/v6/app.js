@@ -16,6 +16,12 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 seedDB();
 
+app.use(require("express-session")({
+  secret: "this is the yelpcamp secret",
+  resave: false,
+  saveUninitialized: false
+}));
+
 app.get("/", function(req, res){
   res.render("landing");
 });
