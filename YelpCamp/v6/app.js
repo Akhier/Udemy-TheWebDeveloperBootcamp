@@ -112,7 +112,7 @@ app.post("/register", function(req, res){
     passport.authenticate("local")(req, res, function(){
       res.redirect("/campgrounds");
     })
-  })
+  });
 });
 
 var port = process.env.PORT || 3000;
