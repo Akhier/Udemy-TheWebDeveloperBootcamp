@@ -124,6 +124,11 @@ app.post("/login", passport.authenticate("local", {
   failureRedirect: "/login"
 }), function(req, res){});
 
+app.get("/logout", function(req, res){
+  req.logout();
+  res.redirect("/campgrounds");
+});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("The YelpCamp Server Has Started!");
