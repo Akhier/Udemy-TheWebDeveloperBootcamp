@@ -38,3 +38,5 @@ router.get("/campgrounds/:id", function(req, res){
     }
   });
 });
+
+module.exports = router;
