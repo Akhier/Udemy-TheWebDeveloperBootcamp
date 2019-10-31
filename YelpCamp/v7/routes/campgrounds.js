@@ -1,5 +1,6 @@
-var express = require("express");
-var router = express.Router();
+var express     = require("express"),
+    router      = express.Router(),
+    campground  = require("../models/campground");
 
 router.get("/campgrounds", function(req, res){
   Campground.find({}, function(err, allCampgrounds){
