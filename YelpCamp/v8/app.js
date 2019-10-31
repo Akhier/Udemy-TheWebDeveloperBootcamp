@@ -18,7 +18,7 @@ mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
-seedDB();
+// seedDB();
 
 app.use(require("express-session")({
   secret: "this is the yelpcamp secret",
