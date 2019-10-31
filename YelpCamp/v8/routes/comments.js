@@ -23,6 +23,7 @@ router.post("/", isLoggedIn, function(req, res){
         if(err){
           console.log(err);
         } else {
+          
           campground.comments.push(comment);
           campground.save();
           res.redirect("/campgrounds/" + campground._id);
