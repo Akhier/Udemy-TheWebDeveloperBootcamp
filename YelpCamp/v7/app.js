@@ -37,8 +37,8 @@ app.use(function(req, res, next){
 });
 
 app.use(indexRoutes);
+app.use(campgroundRoutes);
 app.use(commentRoutes);
-app.use(indexRoutes);
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
