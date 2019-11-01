@@ -44,7 +44,9 @@ router.get("/:id", function(req, res){
   });
 });
 
-// edit and update campground here
+router.get("/:id/edit", function(req, res){
+  res.render("campgrounds/edit");
+});
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
