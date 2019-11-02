@@ -89,4 +89,22 @@ function isLoggedIn(req, res, next){
   res.redirect("/login");
 }
 
+function checkCampgroundOwnership(req, res, next){
+  if(req.isAuthenticated()){
+    Campground.findById(req.params.id, function(err, foundCampground){
+      if(err){
+        res.redirect("/campgrounds");
+      } else {
+        if(foundCampground.author.id.equals(req.user._id)) {
+          res.render("campgrounds/edit", {campground: foundCampground});
+        } else {
+          res.send("no");
+        }
+      }
+    });
+  } else {
+    res.send("you need to be logged in");
+  }
+}
+
 module.exports = router;
