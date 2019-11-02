@@ -50,7 +50,11 @@ router.get("/:id/edit", function(req, res){
       if(err){
         res.redirect("/campgrounds");
       } else {
-        res.render("campgrounds/edit", {campground: foundCampground});
+        if(foundCampground.author.id.equals(req.user._id)) {
+          res.render("campgrounds/edit", {campground: foundCampground});
+        } else {
+          res.send("no");
+        }
       }
     });
   } else {
