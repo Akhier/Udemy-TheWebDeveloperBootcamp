@@ -44,22 +44,10 @@ router.get("/:id", function(req, res){
   });
 });
 
-router.get("/:id/edit", function(req, res){
-  if(req.isAuthenticated()){
-    Campground.findById(req.params.id, function(err, foundCampground){
-      if(err){
-        res.redirect("/campgrounds");
-      } else {
-        if(foundCampground.author.id.equals(req.user._id)) {
-          res.render("campgrounds/edit", {campground: foundCampground});
-        } else {
-          res.send("no");
-        }
-      }
-    });
-  } else {
-    res.send("you need to be logged in");
-  }
+router.get("/:id/edit", checkCampgroundOwnership, function(req, res){
+  Campground.findById(req.params.id, function(err, foundCampground){
+    res.render("campgrounds/edit", {campground: foundCampground});
+  });
 });
 
 router.put("/:id", function(req, res){
