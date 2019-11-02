@@ -93,17 +93,17 @@ function checkCampgroundOwnership(req, res, next){
   if(req.isAuthenticated()){
     Campground.findById(req.params.id, function(err, foundCampground){
       if(err){
-        res.redirect("/campgrounds");
+        res.redirect("back");
       } else {
         if(foundCampground.author.id.equals(req.user._id)) {
-          res.render("campgrounds/edit", {campground: foundCampground});
+          next();
         } else {
-          res.send("no");
+          res.redirect("back");
         }
       }
     });
   } else {
-    res.send("you need to be logged in");
+    res.redirect("back");
   }
 }
 
