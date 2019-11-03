@@ -36,7 +36,7 @@ router.post("/", isLoggedIn, function(req, res){
 });
 
 router.get("/:comment_id/edit", function(req, res){
-  
+  res.render("comments/edit");
 });
 
 function isLoggedIn(req, res, next){
