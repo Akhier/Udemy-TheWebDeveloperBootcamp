@@ -1,6 +1,6 @@
 var middlewareObj = {};
 
-middlewareObj.checkCampgroundOwnership = function checkCampgroundOwnership(req, res, next){
+middlewareObj.checkCampgroundOwnership = function (req, res, next){
   if(req.isAuthenticated()){
     Campground.findById(req.params.id, function(err, foundCampground){
       if(err){
@@ -18,7 +18,7 @@ middlewareObj.checkCampgroundOwnership = function checkCampgroundOwnership(req, 
   }
 }
 
-middlewareObj.checkCommentOwnership = function checkCommentOwnership(req, res, next){
+middlewareObj.checkCommentOwnership = function (req, res, next){
   if(req.isAuthenticated()){
     Comment.findById(req.params.comment_id, function(err, foundComment){
       if(err){
@@ -36,7 +36,7 @@ middlewareObj.checkCommentOwnership = function checkCommentOwnership(req, res, n
   }
 }
 
-middlewareObj.isLoggedIn = function isLoggedIn(req, res, next){
+middlewareObj.isLoggedIn = function (req, res, next){
   if(req.isAuthenticated()){
     return next();
   }
