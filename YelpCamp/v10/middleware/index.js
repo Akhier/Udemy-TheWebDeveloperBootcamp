@@ -1,3 +1,5 @@
+var Campground  = require("../models/campground"),
+    Comment     = require("../models/comment");
 var middlewareObj = {};
 
 middlewareObj.checkCampgroundOwnership = function (req, res, next){
